@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ArrowRight, Truck, CableCar, ShieldCheck, FileCheck } from "lucide-react"
+import { ArrowRight, Truck, ShieldCheck, FileCheck } from "lucide-react"
 
 const services = [
   {
@@ -14,20 +14,6 @@ const services = [
       "Maquinaria amarilla y pesada",
       "Carga extradimensionada",
       "Equipos en optimo estado",
-    ],
-  },
-  {
-    icon: CableCar,
-    title: "Grúa e Izaje",
-    subtitle: "Izaje Especializado",
-    description:
-      "Servicio de grua para izaje de cargas pesadas e industriales. Operaciones de cargue, descargue e instalacion de equipos y estructuras con personal certificado y maquinaria de alta capacidad. Planificacion de maniobras con estudios de ingenieria.",
-    image: "/images/service-crane.jpg",
-    features: [
-      "Gruas de alta capacidad",
-      "Personal certificado",
-      "Estudios de ingenieria",
-      "Maniobras especializadas",
     ],
   },
   {

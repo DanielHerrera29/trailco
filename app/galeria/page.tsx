@@ -365,7 +365,7 @@ export default function GaleriaPage() {
             <Button
               asChild
               variant="outline"
-              className="border-slate-600 text-white hover:bg-slate-800 px-8 py-6 text-lg font-semibold w-full sm:w-auto"
+              className="border-slate-500 text-slate-200 bg-slate-800/50 hover:bg-slate-700 hover:text-white px-8 py-6 text-lg font-semibold w-full sm:w-auto"
             >
               <Link href="/#servicios">
                 Ver Más Servicios
