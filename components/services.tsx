@@ -18,7 +18,7 @@ const services = [
   },
   {
     icon: CableCar,
-    title: "Grua e Izaje",
+    title: "Grúa e Izaje",
     subtitle: "Izaje Especializado",
     description:
       "Servicio de grua para izaje de cargas pesadas e industriales. Operaciones de cargue, descargue e instalacion de equipos y estructuras con personal certificado y maquinaria de alta capacidad. Planificacion de maniobras con estudios de ingenieria.",

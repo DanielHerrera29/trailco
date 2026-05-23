@@ -33,9 +33,9 @@ const values = [
   },
   {
     icon: FileCheck2,
-    title: "Calidad Certificada",
+    title: "Gestión Eficiente",
     description:
-      "Coordinamos eficientemente recursos tecnologicos, financieros y de talento humano bajo normas ISO y RUC.",
+      "Coordinamos eficientemente recursos tecnológicos, financieros y de talento humano para garantizar operaciones exitosas.",
   },
 ]
 
@@ -61,23 +61,14 @@ export function HSEQ() {
               Mantenemos los mas altos estandares para que nuestros clientes y colaboradores
               desarrollen sus objetivos de manera segura y eficiente.
             </p>
-            <div className="mt-8 flex flex-col gap-4">
-              <div className="rounded-lg bg-muted p-4">
-                <p className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                  Certificaciones
-                </p>
-                <p className="mt-2 text-sm text-foreground font-medium">
-                  ISO 9001 | ISO 14001 | OHSAS 18001 | RUC
-                </p>
-              </div>
-              <div className="rounded-lg bg-muted p-4">
-                <p className="text-xs font-semibold text-secondary uppercase tracking-wider">
-                  Avalados por
-                </p>
-                <p className="mt-2 text-sm text-foreground font-medium">
-                  Ministerio de Transporte | INVIAS | Consejo Colombiano de Seguridad
-                </p>
-              </div>
+            <div className="mt-8 rounded-lg bg-muted p-4">
+              <p className="text-xs font-semibold text-secondary uppercase tracking-wider">
+                Compromiso Normativo
+              </p>
+              <p className="mt-2 text-sm text-foreground font-medium leading-relaxed">
+                Operamos bajo los más altos estándares del sector transporte en Colombia, cumpliendo
+                toda la normativa vigente del Ministerio de Transporte.
+              </p>
             </div>
           </div>
 

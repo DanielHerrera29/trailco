@@ -40,7 +40,7 @@ export function Projects() {
             </p>
           </div>
           <a
-            href="#contacto"
+            href="/proyectos"
             className="inline-flex items-center gap-2 text-sm font-semibold text-secondary transition-colors hover:text-secondary/80"
           >
             Ver todos los proyectos

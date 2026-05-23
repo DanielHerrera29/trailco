@@ -44,64 +44,32 @@ const categoryColors: Record<Category, string> = {
   "Video": "bg-red-600"
 }
 
-// Photo data - 56 photos
+// Photo data - 24 fotos reales
 const photoData: Photo[] = [
   { id: 1, src: "/images/gallery/foto-001.jpg", alt: "Transporte de excavadora CAT 320 en vía principal Bogotá-Medellín", category: "Transporte en Vía", featured: true },
-  { id: 2, src: "/images/gallery/foto-002.jpg", alt: "Cargue de retroexcavadora John Deere en plataforma cama baja", category: "Cargue y Descargue", featured: true },
-  { id: 3, src: "/images/gallery/foto-003.jpg", alt: "Operación especial de izaje en zona industrial de Barranquilla", category: "Operaciones Especiales", featured: true },
-  { id: 4, src: "/images/gallery/foto-004.jpg", alt: "Tractomula Kenworth transportando bulldozer D6", category: "Transporte en Vía", featured: false },
-  { id: 5, src: "/images/gallery/foto-005.jpg", alt: "Descargue de motoniveladora en proyecto vial Antioquia", category: "Cargue y Descargue", featured: false },
-  { id: 6, src: "/images/gallery/foto-006.jpg", alt: "Convoy de maquinaria pesada con escolta en Santander", category: "Operaciones Especiales", featured: false },
-  { id: 7, src: "/images/gallery/foto-007.jpg", alt: "Cargue nocturno de compactador vibratorio", category: "Cargue y Descargue", featured: false },
-  { id: 8, src: "/images/gallery/foto-008.jpg", alt: "Transporte de grúa torre por carretera nacional", category: "Transporte en Vía", featured: false },
-  { id: 9, src: "/images/gallery/foto-009.jpg", alt: "Maniobra de descargue con grúa telescópica", category: "Operaciones Especiales", featured: false },
-  { id: 10, src: "/images/gallery/foto-010.jpg", alt: "Cama baja extendida con excavadora de orugas", category: "Transporte en Vía", featured: false },
-  { id: 11, src: "/images/gallery/foto-011.jpg", alt: "Cargue de minicargador Bobcat en Cali", category: "Cargue y Descargue", featured: false },
-  { id: 12, src: "/images/gallery/foto-012.jpg", alt: "Operación de transporte extradimensionado en Meta", category: "Operaciones Especiales", featured: false },
-  { id: 13, src: "/images/gallery/foto-013.jpg", alt: "Tractomula con plataforma especial para tanques", category: "Transporte en Vía", featured: false },
-  { id: 14, src: "/images/gallery/foto-014.jpg", alt: "Descargue de rodillo compactador en obra civil", category: "Cargue y Descargue", featured: false },
-  { id: 15, src: "/images/gallery/foto-015.jpg", alt: "Convoy nocturno con señalización especial", category: "Operaciones Especiales", featured: false },
-  { id: 16, src: "/images/gallery/foto-016.jpg", alt: "Transporte de retroexcavadora por vía secundaria", category: "Transporte en Vía", featured: false },
-  { id: 17, src: "/images/gallery/foto-017.jpg", alt: "Cargue de excavadora Komatsu en Bucaramanga", category: "Cargue y Descargue", featured: false },
-  { id: 18, src: "/images/gallery/foto-018.jpg", alt: "Maniobra especial de giro en intersección", category: "Operaciones Especiales", featured: false },
-  { id: 19, src: "/images/gallery/foto-019.jpg", alt: "Cama baja con bulldozer Caterpillar D8", category: "Transporte en Vía", featured: false },
-  { id: 20, src: "/images/gallery/foto-020.jpg", alt: "Descargue de martillo hidráulico en cantera", category: "Cargue y Descargue", featured: false },
-  { id: 21, src: "/images/gallery/foto-021.jpg", alt: "Operación de cruce de puente con carga especial", category: "Operaciones Especiales", featured: false },
-  { id: 22, src: "/images/gallery/foto-022.jpg", alt: "Transporte de finisher de asfalto", category: "Transporte en Vía", featured: false },
-  { id: 23, src: "/images/gallery/foto-023.jpg", alt: "Cargue de planta de asfalto móvil", category: "Cargue y Descargue", featured: false },
-  { id: 24, src: "/images/gallery/foto-024.jpg", alt: "Convoy con tres camas bajas en Córdoba", category: "Operaciones Especiales", featured: false },
-  { id: 25, src: "/images/gallery/foto-025.jpg", alt: "Tractomula International con miniexcavadora", category: "Transporte en Vía", featured: false },
-  { id: 26, src: "/images/gallery/foto-026.jpg", alt: "Descargue de zanjadora en proyecto de alcantarillado", category: "Cargue y Descargue", featured: false },
-  { id: 27, src: "/images/gallery/foto-027.jpg", alt: "Maniobra de estacionamiento en espacio reducido", category: "Operaciones Especiales", featured: false },
-  { id: 28, src: "/images/gallery/foto-028.jpg", alt: "Transporte de trituradora de piedra", category: "Transporte en Vía", featured: false },
-  { id: 29, src: "/images/gallery/foto-029.jpg", alt: "Cargue de manipulador telescópico", category: "Cargue y Descargue", featured: false },
-  { id: 30, src: "/images/gallery/foto-030.jpg", alt: "Operación especial en zona de alta montaña", category: "Operaciones Especiales", featured: false },
-  { id: 31, src: "/images/gallery/foto-031.jpg", alt: "Cama baja con draga de succión", category: "Transporte en Vía", featured: false },
-  { id: 32, src: "/images/gallery/foto-032.jpg", alt: "Descargue de perforadora hidráulica", category: "Cargue y Descargue", featured: false },
-  { id: 33, src: "/images/gallery/foto-033.jpg", alt: "Convoy con permiso especial de transporte", category: "Operaciones Especiales", featured: false },
-  { id: 34, src: "/images/gallery/foto-034.jpg", alt: "Transporte de cargador frontal 966", category: "Transporte en Vía", featured: false },
-  { id: 35, src: "/images/gallery/foto-035.jpg", alt: "Cargue de compresor industrial en Cartagena", category: "Cargue y Descargue", featured: false },
-  { id: 36, src: "/images/gallery/foto-036.jpg", alt: "Maniobra de descenso en pendiente pronunciada", category: "Operaciones Especiales", featured: false },
-  { id: 37, src: "/images/gallery/foto-037.jpg", alt: "Tractomula Freightliner con volqueta articulada", category: "Transporte en Vía", featured: false },
-  { id: 38, src: "/images/gallery/foto-038.jpg", alt: "Descargue de torre de perforación petrolera", category: "Cargue y Descargue", featured: false },
-  { id: 39, src: "/images/gallery/foto-039.jpg", alt: "Operación nocturna con iluminación especial", category: "Operaciones Especiales", featured: false },
-  { id: 40, src: "/images/gallery/foto-040.jpg", alt: "Transporte de grúa sobre orugas Liebherr", category: "Transporte en Vía", featured: false },
-  { id: 41, src: "/images/gallery/foto-041.jpg", alt: "Cargue de pavimentadora de concreto", category: "Cargue y Descargue", featured: false },
-  { id: 42, src: "/images/gallery/foto-042.jpg", alt: "Convoy con escolta policial en autopista", category: "Operaciones Especiales", featured: false },
-  { id: 43, src: "/images/gallery/foto-043.jpg", alt: "Cama baja modular con transformador eléctrico", category: "Transporte en Vía", featured: false },
-  { id: 44, src: "/images/gallery/foto-044.jpg", alt: "Descargue de piloteadora en obra de cimentación", category: "Cargue y Descargue", featured: false },
-  { id: 45, src: "/images/gallery/foto-045.jpg", alt: "Maniobra de acceso a planta industrial", category: "Operaciones Especiales", featured: false },
-  { id: 46, src: "/images/gallery/foto-046.jpg", alt: "Transporte de excavadora anfibia", category: "Transporte en Vía", featured: false },
-  { id: 47, src: "/images/gallery/foto-047.jpg", alt: "Cargue de planta trituradora portátil", category: "Cargue y Descargue", featured: false },
-  { id: 48, src: "/images/gallery/foto-048.jpg", alt: "Operación de paso por puente angosto", category: "Operaciones Especiales", featured: false },
-  { id: 49, src: "/images/gallery/foto-049.jpg", alt: "Tractomula con mixer de concreto sobre orugas", category: "Transporte en Vía", featured: false },
-  { id: 50, src: "/images/gallery/foto-050.jpg", alt: "Descargue de máquina tuneladora", category: "Cargue y Descargue", featured: false },
-  { id: 51, src: "/images/gallery/foto-051.jpg", alt: "Convoy de emergencia para rescate de maquinaria", category: "Operaciones Especiales", featured: false },
-  { id: 52, src: "/images/gallery/foto-052.jpg", alt: "Transporte de scraiper CAT 623", category: "Transporte en Vía", featured: false },
-  { id: 53, src: "/images/gallery/foto-053.jpg", alt: "Cargue de rodillo neumático en Ibagué", category: "Cargue y Descargue", featured: false },
-  { id: 54, src: "/images/gallery/foto-054.jpg", alt: "Maniobra de viraje en rotonda", category: "Operaciones Especiales", featured: false },
-  { id: 55, src: "/images/gallery/foto-055.jpg", alt: "Cama baja con excavadora de demolición", category: "Transporte en Vía", featured: false },
-  { id: 56, src: "/images/gallery/foto-056.jpg", alt: "Descargue final en proyecto minero Cesar", category: "Cargue y Descargue", featured: false },
+  { id: 2, src: "/images/gallery/foto-003.jpg", alt: "Operación especial de izaje en zona industrial de Barranquilla", category: "Operaciones Especiales", featured: false },
+  { id: 3, src: "/images/gallery/foto-005.jpg", alt: "Descargue de motoniveladora en proyecto vial Antioquia", category: "Cargue y Descargue", featured: false },
+  { id: 4, src: "/images/gallery/foto-007.jpg", alt: "Cargue nocturno de compactador vibratorio", category: "Cargue y Descargue", featured: false },
+  { id: 5, src: "/images/gallery/foto-009.jpg", alt: "Maniobra de descargue con grúa telescópica", category: "Operaciones Especiales", featured: false },
+  { id: 6, src: "/images/gallery/foto-010.jpg", alt: "Cama baja extendida con excavadora de orugas", category: "Transporte en Vía", featured: false },
+  { id: 7, src: "/images/gallery/foto-004.jpg", alt: "Tractomula Kenworth transportando bulldozer D6", category: "Transporte en Vía", featured: false },
+  { id: 8, src: "/images/gallery/foto-006.jpg", alt: "Convoy de maquinaria pesada con escolta en Santander", category: "Operaciones Especiales", featured: false },
+  { id: 9, src: "/images/gallery/foto-008.jpg", alt: "Transporte de grúa torre por carretera nacional", category: "Transporte en Vía", featured: false },
+  { id: 10, src: "/images/gallery/foto-012.jpg", alt: "Operación de transporte extradimensionado en Meta", category: "Operaciones Especiales", featured: false },
+  { id: 11, src: "/images/gallery/foto-013.jpg", alt: "Tractomula con plataforma especial para tanques", category: "Transporte en Vía", featured: false },
+  { id: 12, src: "/images/gallery/foto-014.jpg", alt: "Descargue de rodillo compactador en obra civil", category: "Cargue y Descargue", featured: false },
+  { id: 13, src: "/images/gallery/foto-015.jpg", alt: "Convoy nocturno con señalización especial", category: "Operaciones Especiales", featured: false },
+  { id: 14, src: "/images/gallery/foto-016.jpg", alt: "Transporte de retroexcavadora por vía secundaria", category: "Transporte en Vía", featured: false },
+  { id: 15, src: "/images/gallery/foto-017.jpg", alt: "Cargue de excavadora Komatsu en Bucaramanga", category: "Cargue y Descargue", featured: false },
+  { id: 16, src: "/images/gallery/foto-018.jpg", alt: "Maniobra especial de giro en intersección", category: "Operaciones Especiales", featured: false },
+  { id: 17, src: "/images/gallery/foto-019.jpg", alt: "Cama baja con bulldozer Caterpillar D8", category: "Transporte en Vía", featured: false },
+  { id: 18, src: "/images/gallery/foto-020.jpg", alt: "Descargue de martillo hidráulico en cantera", category: "Cargue y Descargue", featured: false },
+  { id: 19, src: "/images/gallery/foto-021.jpg", alt: "Operación de cruce de puente con carga especial", category: "Operaciones Especiales", featured: false },
+  { id: 20, src: "/images/gallery/foto-023.jpg", alt: "Cargue de planta de asfalto móvil", category: "Cargue y Descargue", featured: false },
+  { id: 21, src: "/images/gallery/foto-025.jpg", alt: "Tractomula International con miniexcavadora", category: "Transporte en Vía", featured: false },
+  { id: 22, src: "/images/gallery/foto-026.jpg", alt: "Descargue de zanjadora en proyecto de alcantarillado", category: "Cargue y Descargue", featured: false },
+  { id: 23, src: "/images/gallery/foto-002.jpg", alt: "Cargue de retroexcavadora John Deere en plataforma cama baja", category: "Cargue y Descargue", featured: true },
+  { id: 24, src: "/images/gallery/foto-027.jpg", alt: "Maniobra de estacionamiento en espacio reducido", category: "Operaciones Especiales", featured: false },
 ]
 
 // Categories with counts
@@ -193,7 +161,7 @@ export default function GaleriaPage() {
               </div>
               <div className="flex items-center gap-2 bg-slate-800/60 px-4 py-2 rounded-full border border-slate-700">
                 <Camera className="h-5 w-5 text-orange-500" />
-                <span className="text-sm font-medium text-white">56 Fotos</span>
+                <span className="text-sm font-medium text-white">{photoData.length} Fotos</span>
                 <span className="text-slate-500">·</span>
                 <Video className="h-4 w-4 text-orange-500" />
                 <span className="text-sm font-medium text-white">1 Video</span>
@@ -451,6 +419,7 @@ export default function GaleriaPage() {
             <div className="relative w-full max-w-5xl max-h-[85vh] aspect-video mx-4">
               {filteredPhotos[currentPhotoIndex] && (
                 <Image
+                  key={filteredPhotos[currentPhotoIndex].src}
                   src={filteredPhotos[currentPhotoIndex].src}
                   alt={filteredPhotos[currentPhotoIndex].alt}
                   fill

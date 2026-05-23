@@ -9,7 +9,10 @@ const _montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserra
 export const metadata: Metadata = {
   title: 'Trailco | Transporte Especial de Carga Pesada y Extradimensionada en Colombia',
   description:
-    'Trailco - Transporte especial de carga pesada y extradimensionada. Gruas, tractomulas, cama bajas, escoltas, tecnico vial y permisos viales. Mas de 20 anos de experiencia en Colombia.',
+    'Trailco - Transporte especial de carga pesada y extradimensionada. Grúas, tractomulas, cama bajas, escoltas, técnico vial y permisos viales. Más de 10 años de experiencia en Colombia.',
+  icons: {
+    icon: '/images/logo-empresa.jpg',
+  },
 }
 
 export default function RootLayout({

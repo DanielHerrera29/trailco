@@ -62,7 +62,7 @@ export function Hero() {
         {/* Stats bar */}
         <div className="mt-20 grid grid-cols-2 gap-px rounded-xl bg-primary-foreground/10 overflow-hidden sm:grid-cols-4 max-w-3xl">
           {[
-            { value: "20+", label: "Anos de experiencia" },
+            { value: "10+", label: "Años de experiencia" },
             { value: "500+", label: "Proyectos completados" },
             { value: "24/7", label: "Disponibilidad total" },
             { value: "100%", label: "Compromiso y seguridad" },

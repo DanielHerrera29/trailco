@@ -6,13 +6,13 @@ const features = [
     icon: Shield,
     title: "Seguridad Garantizada",
     description:
-      "Amparamos la seguridad de su carga y la infraestructura vial. Polizas de responsabilidad civil y todo riesgo.",
+      "Operamos con total respaldo legal y cobertura aseguradora, garantizando operaciones seguras, responsables y dentro del marco normativo colombiano.",
   },
   {
     icon: Award,
     title: "Experiencia Comprobada",
     description:
-      "Mas de 20 anos en el mercado de transporte especial y carga extradimensionada a nivel nacional.",
+      "Más de 10 años en el mercado de transporte especial y carga extradimensionada a nivel nacional.",
   },
   {
     icon: Users,
@@ -55,12 +55,12 @@ export function WhyChooseUs() {
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-primary-foreground/70">
               En Trailco nos especializamos en el manejo de cargas especiales, indivisibles,
-              sobredimensionadas y extrapesadas. Garantizamos y amparamos la seguridad de su carga y
-              la infraestructura vial por la cual transitamos a nivel nacional.
+              sobredimensionadas y extrapesadas. Operamos con altos estándares de seguridad y
+              cumplimiento normativo a nivel nacional.
             </p>
             <p className="mt-4 text-primary-foreground/60 leading-relaxed">
-              Avalados por el Ministerio de Transporte, contamos con todos los permisos, seguros
-              y certificaciones para operar con los mas altos estandares de calidad y seguridad.
+              Operamos bajo los más altos estándares del sector transporte en Colombia, cumpliendo
+              toda la normativa vigente del Ministerio de Transporte.
             </p>
 
             <div className="mt-10 relative aspect-[16/9] overflow-hidden rounded-2xl">

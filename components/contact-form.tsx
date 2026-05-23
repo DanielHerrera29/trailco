@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Correo Electronico",
-    values: [{ text: "info@trailco.com.co", href: "mailto:info@trailco.com.co" }],
+    values: [{ text: "trctransporte.sas@gmail.com", href: "mailto:trctransporte.sas@gmail.com" }],
   },
   {
     icon: MapPin,
@@ -181,14 +181,14 @@ export function ContactForm() {
                     </Label>
                     <select
                       id="service"
-                      className="mt-2 w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-3 py-2 text-sm text-primary-foreground focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800 placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
-                      <option value="">Seleccione un servicio</option>
-                      <option value="tractomula">Tractomula y Cama Baja</option>
-                      <option value="grua">Grua e Izaje</option>
-                      <option value="escoltas">Escoltas y Tecnico Vial</option>
-                      <option value="permisos">Permisos Viales</option>
-                      <option value="integral">Servicio Integral</option>
+                      <option value="" className="text-gray-500">Seleccione un servicio</option>
+                      <option value="tractomula" className="text-gray-800">Tractomula y Cama Baja</option>
+                      <option value="grua" className="text-gray-800">Grúa e Izaje</option>
+                      <option value="escoltas" className="text-gray-800">Escoltas y Tecnico Vial</option>
+                      <option value="permisos" className="text-gray-800">Permisos Viales</option>
+                      <option value="integral" className="text-gray-800">Servicio Integral</option>
                     </select>
                   </div>
 

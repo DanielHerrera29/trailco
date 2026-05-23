@@ -14,7 +14,7 @@ const navLinks = [
 
 const serviceLinks = [
   "Tractomula y Cama Baja",
-  "Grua e Izaje",
+  "Grúa e Izaje",
   "Escoltas y Tecnico Vial",
   "Permisos Viales",
   "Maquinaria Amarilla",
@@ -144,11 +144,11 @@ export function Footer() {
                 +57 321 457 9601
               </a>
               <a
-                href="mailto:info@trailco.com.co"
+                href="mailto:trctransporte.sas@gmail.com"
                 className="flex items-center gap-3 text-sm text-background/50 transition-colors hover:text-secondary"
               >
                 <Mail className="h-4 w-4 shrink-0 text-secondary/70" />
-                info@trailco.com.co
+                trctransporte.sas@gmail.com
               </a>
               <div className="flex items-start gap-3 text-sm text-background/50">
                 <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-secondary/70" />
