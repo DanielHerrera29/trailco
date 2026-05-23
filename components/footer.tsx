@@ -1,12 +1,15 @@
+import Image from "next/image"
+import Link from "next/link"
 import { Phone, Mail, MapPin } from "lucide-react"
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "HSEQ", href: "#hseq" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: "/#inicio" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Galería", href: "/galeria" },
+  { label: "Proyectos", href: "/#proyectos" },
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "HSEQ", href: "/#hseq" },
+  { label: "Contacto", href: "/#contacto" },
 ]
 
 const serviceLinks = [
@@ -34,12 +37,12 @@ export function Footer() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#contacto"
+              <Link
+                href="/#contacto"
                 className="inline-flex items-center justify-center rounded-lg bg-secondary px-8 py-3.5 text-sm font-bold text-secondary-foreground transition-colors hover:bg-secondary/90"
               >
-                Solicitar Cotizacion
-              </a>
+                Solicitar Cotización
+              </Link>
               <a
                 href="https://wa.me/573123057705?text=Hola%2C%20necesito%20una%20cotizacion"
                 target="_blank"
@@ -59,10 +62,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <span className="font-heading text-lg font-black text-secondary-foreground">
-                  T
-                </span>
+              <div className="relative h-12 w-12 rounded-lg overflow-hidden">
+                <Image
+                  src="/images/logo-trailco.jpg"
+                  alt="Trailco Logo"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-heading text-lg font-bold leading-tight text-background">
@@ -87,12 +93,12 @@ export function Footer() {
             <ul className="mt-6 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-background/50 transition-colors hover:text-secondary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -106,12 +112,12 @@ export function Footer() {
             <ul className="mt-6 flex flex-col gap-3">
               {serviceLinks.map((service) => (
                 <li key={service}>
-                  <a
-                    href="#servicios"
+                  <Link
+                    href="/#servicios"
                     className="text-sm text-background/50 transition-colors hover:text-secondary"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

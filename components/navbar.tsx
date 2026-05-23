@@ -1,25 +1,28 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
+import Link from "next/link"
 import { Menu, X, Phone, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
+  { label: "Inicio", href: "/#inicio" },
   {
     label: "Servicios",
-    href: "#servicios",
+    href: "/#servicios",
     children: [
-      { label: "Tractomula y Cama Baja", href: "#servicios" },
-      { label: "Grua e Izaje", href: "#servicios" },
-      { label: "Escoltas y Tecnico Vial", href: "#servicios" },
-      { label: "Permisos Viales", href: "#servicios" },
+      { label: "Tractomula y Cama Baja", href: "/#servicios" },
+      { label: "Grua e Izaje", href: "/#servicios" },
+      { label: "Escoltas y Tecnico Vial", href: "/#servicios" },
+      { label: "Permisos Viales", href: "/#servicios" },
     ],
   },
-  { label: "Proyectos", href: "#proyectos" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "HSEQ", href: "#hseq" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Galería", href: "/galeria" },
+  { label: "Proyectos", href: "/#proyectos" },
+  { label: "Nosotros", href: "/#nosotros" },
+  { label: "HSEQ", href: "/#hseq" },
+  { label: "Contacto", href: "/#contacto" },
 ]
 
 export function Navbar() {
@@ -67,9 +70,15 @@ export function Navbar() {
       </div>
 
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#inicio" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-            <span className="font-heading text-lg font-black text-secondary-foreground">T</span>
+        <Link href="/#inicio" className="flex items-center gap-3">
+          <div className="relative h-12 w-12 rounded-lg overflow-hidden">
+            <Image
+              src="/images/logo-trailco.jpg"
+              alt="Trailco Logo"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-heading text-lg font-bold leading-tight tracking-tight text-primary-foreground">
@@ -79,7 +88,7 @@ export function Navbar() {
               Transporte Especial
             </span>
           </div>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
@@ -89,23 +98,23 @@ export function Navbar() {
               onMouseEnter={() => link.children && setActiveDropdown(link.label)}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <a
+              <Link
                 href={link.href}
                 className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-primary-foreground/80 transition-colors hover:text-secondary"
               >
                 {link.label}
                 {link.children && <ChevronDown className="h-3 w-3" />}
-              </a>
+              </Link>
               {link.children && activeDropdown === link.label && (
                 <div className="absolute left-0 top-full w-56 rounded-lg border border-border bg-card p-2 shadow-xl">
                   {link.children.map((child) => (
-                    <a
+                    <Link
                       key={child.label}
                       href={child.href}
                       className="block rounded-md px-3 py-2 text-sm text-card-foreground transition-colors hover:bg-secondary/10 hover:text-secondary"
                     >
                       {child.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -118,7 +127,7 @@ export function Navbar() {
             asChild
             className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold"
           >
-            <a href="#contacto">Solicitar Cotizacion</a>
+            <Link href="/#contacto">Solicitar Cotización</Link>
           </Button>
         </div>
 
@@ -136,24 +145,24 @@ export function Navbar() {
           <div className="flex flex-col px-6 py-4 gap-1">
             {navLinks.map((link) => (
               <div key={link.href + link.label}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className="block rounded-md px-3 py-3 text-sm font-medium text-primary-foreground/80 transition-colors hover:text-secondary"
                 >
                   {link.label}
-                </a>
+                </Link>
                 {link.children && (
                   <div className="ml-4 flex flex-col gap-1">
                     {link.children.map((child) => (
-                      <a
+                      <Link
                         key={child.label}
                         href={child.href}
                         onClick={() => setIsOpen(false)}
                         className="block rounded-md px-3 py-2 text-xs text-primary-foreground/60 transition-colors hover:text-secondary"
                       >
                         {child.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
@@ -171,9 +180,9 @@ export function Navbar() {
                 asChild
                 className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold"
               >
-                <a href="#contacto" onClick={() => setIsOpen(false)}>
-                  Solicitar Cotizacion
-                </a>
+                <Link href="/#contacto" onClick={() => setIsOpen(false)}>
+                  Solicitar Cotización
+                </Link>
               </Button>
             </div>
           </div>
