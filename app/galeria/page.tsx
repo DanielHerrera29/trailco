@@ -373,13 +373,13 @@ export default function GaleriaPage() {
             </Button>
           </div>
           <a
-            href="https://wa.me/573123057705"
+            href="https://wa.me/573214579601"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 mt-8 text-green-500 hover:text-green-400 transition-colors"
           >
             <MessageCircle className="h-5 w-5" />
-            <span className="font-medium">+57 312 305 7705</span>
+            <span className="font-medium">+57 321 457 9601</span>
           </a>
         </div>
       </section>

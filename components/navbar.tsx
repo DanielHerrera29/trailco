@@ -49,14 +49,14 @@ export function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
           <div className="flex items-center gap-6">
             <a
-              href="tel:+573123057705"
+              href="tel:+573214579601"
               className={`flex items-center gap-2 text-xs transition-colors ${
                 scrolled ? "text-gray-500 hover:text-orange-500" : "text-white/70 hover:text-orange-300"
               }`}
             >
               <Phone className="h-3 w-3" />
-              +57 312 305 7705
-            </a>
+              +57 321 457 9601
+              </a>
             <span className={scrolled ? "text-gray-300" : "text-white/30"}>|</span>
             <a
               href="mailto:trctransporte.sas@gmail.com"
@@ -182,11 +182,11 @@ export function Navbar() {
             ))}
             <div className="mt-4 flex flex-col gap-3 border-t border-gray-200 pt-4">
               <a
-                href="tel:+573123057705"
+href="tel:+573214579601"
                 className="flex items-center gap-2 text-sm text-gray-600"
               >
                 <Phone className="h-4 w-4" />
-                +57 312 305 7705
+              +57 321 457 9601
               </a>
               <Button
                 asChild

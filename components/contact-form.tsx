@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -11,8 +11,8 @@ const contactInfo = [
     icon: Phone,
     label: "Telefonos",
     values: [
-      { text: "+57 312 305 7705", href: "tel:+573123057705" },
-      { text: "+57 311 809 2301", href: "tel:+573118092301" },
+      { text: "+57 321 457 9601", href: "tel:+573214579601" },
+      { text: "+57 322 512 6372", href: "tel:+573225126372" },
     ],
   },
   {
@@ -31,7 +31,7 @@ const contactInfo = [
     values: [
       {
         text: "Escribenos por WhatsApp",
-        href: "https://wa.me/573123057705?text=Hola%2C%20necesito%20una%20cotizacion",
+        href: "https://wa.me/573214579601?text=Hola%2C%20necesito%20una%20cotizacion",
       },
     ],
   },
@@ -39,11 +39,45 @@ const contactInfo = [
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [errorMsg, setErrorMsg] = useState("")
+  const formRef = useRef<HTMLFormElement>(null)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 5000)
+    setSending(true)
+    setErrorMsg("")
+
+    const form = new FormData(e.target as HTMLFormElement)
+    const data = {
+      name: form.get("name") as string,
+      company: form.get("company") as string,
+      phone: form.get("phone") as string,
+      email: form.get("email") as string,
+      service: form.get("service") as string,
+      message: form.get("message") as string,
+    }
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          setSubmitted(true)
+          setSending(false)
+          formRef.current?.reset()
+        } else {
+          setErrorMsg("Error al enviar. Intente de nuevo.")
+          setSending(false)
+        }
+      })
+      .catch(() => {
+        setErrorMsg("Error de conexión. Intente de nuevo.")
+        setSending(false)
+      })
   }
 
   return (
@@ -109,7 +143,7 @@ export function ContactForm() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-6">
                   <div className="grid gap-6 sm:grid-cols-2">
                     <div>
                       <Label
@@ -121,6 +155,7 @@ export function ContactForm() {
                       <Input
                         id="name"
                         required
+                        name="name"
                         placeholder="Su nombre"
                         className="mt-2 border-primary-foreground/20 bg-primary-foreground/5 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:ring-secondary"
                       />
@@ -134,6 +169,7 @@ export function ContactForm() {
                       </Label>
                       <Input
                         id="company"
+                        name="company"
                         placeholder="Nombre de su empresa"
                         className="mt-2 border-primary-foreground/20 bg-primary-foreground/5 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:ring-secondary"
                       />
@@ -151,6 +187,7 @@ export function ContactForm() {
                         id="phone"
                         type="tel"
                         required
+                        name="phone"
                         placeholder="+57 300 000 0000"
                         className="mt-2 border-primary-foreground/20 bg-primary-foreground/5 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:ring-secondary"
                       />
@@ -166,6 +203,7 @@ export function ContactForm() {
                         id="email"
                         type="email"
                         required
+                        name="email"
                         placeholder="correo@ejemplo.com"
                         className="mt-2 border-primary-foreground/20 bg-primary-foreground/5 text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:ring-secondary"
                       />
@@ -181,11 +219,11 @@ export function ContactForm() {
                     </Label>
                     <select
                       id="service"
+                      name="service"
                       className="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-800 placeholder:text-gray-400 focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500"
                     >
                       <option value="" className="text-gray-500">Seleccione un servicio</option>
                       <option value="tractomula" className="text-gray-800">Tractomula y Cama Baja</option>
-                      <option value="grua" className="text-gray-800">Grúa e Izaje</option>
                       <option value="escoltas" className="text-gray-800">Escoltas y Tecnico Vial</option>
                       <option value="permisos" className="text-gray-800">Permisos Viales</option>
                       <option value="integral" className="text-gray-800">Servicio Integral</option>
@@ -203,16 +241,21 @@ export function ContactForm() {
                       id="message"
                       required
                       rows={4}
+                      name="message"
                       placeholder="Tipo de carga, dimensiones, peso, origen y destino..."
                       className="mt-2 w-full rounded-md border border-primary-foreground/20 bg-primary-foreground/5 px-3 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
                     />
                   </div>
 
+                  {errorMsg && (
+                    <p className="text-sm text-red-400 bg-red-400/10 px-4 py-2 rounded-lg">{errorMsg}</p>
+                  )}
                   <Button
                     type="submit"
-                    className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold text-base py-6"
+                    disabled={sending}
+                    className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 disabled:opacity-50 font-semibold text-base py-6"
                   >
-                    Enviar Solicitud de Cotizacion
+                    {sending ? "Enviando..." : "Enviar Solicitud de Cotizacion"}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </form>

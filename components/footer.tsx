@@ -44,7 +44,7 @@ export function Footer() {
                 Solicitar Cotización
               </Link>
               <a
-                href="https://wa.me/573123057705?text=Hola%2C%20necesito%20una%20cotizacion"
+                href="https://wa.me/573214579601?text=Hola%2C%20necesito%20una%20cotizacion"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-lg border border-background/20 px-8 py-3.5 text-sm font-bold text-background transition-colors hover:bg-background/10"
@@ -137,11 +137,11 @@ export function Footer() {
                 +57 321 457 9601
               </a>
               <a
-                href="tel:+573214579601"
+                href="tel:+573225126372"
                 className="flex items-center gap-3 text-sm text-background/50 transition-colors hover:text-secondary"
               >
                 <Phone className="h-4 w-4 shrink-0 text-secondary/70" />
-                +57 321 457 9601
+                +57 322 512 6372
               </a>
               <a
                 href="mailto:trctransporte.sas@gmail.com"
