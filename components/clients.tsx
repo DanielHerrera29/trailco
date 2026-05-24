@@ -1,15 +1,8 @@
 "use client"
 
 const clients = [
-  "Drummond",
-  "Cerrejon",
-  "EPM",
-  "Frontera Energy",
-  "Siemens",
-  "ABB",
-  "ENEL",
-  "OHL",
-  "DAKO",
+  "Feme ingeniería",
+  "Gisaico sas",
 ]
 
 export function Clients() {
