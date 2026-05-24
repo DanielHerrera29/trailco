@@ -3,6 +3,12 @@
 const clients = [
   "Feme ingeniería",
   "Gisaico sas",
+  "Ingecolmaq",
+  "Instituto de Desarrollo Urbano (IDU)",
+  "CAR Cundinamarca",
+  "Invias", 
+  "Ecopetrol",
+  "Concay",
 ]
 
 export function Clients() {
