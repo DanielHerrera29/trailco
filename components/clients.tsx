@@ -1,9 +1,6 @@
 "use client"
 
 const clients = [
-  "Ecopetrol",
-  "Argos",
-  "CEMEX",
   "Drummond",
   "Cerrejon",
   "EPM",
