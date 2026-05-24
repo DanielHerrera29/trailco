@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://trailco-wpa5.vercel.app/sitemap.xml',
+    sitemap: 'https://trailco.app/sitemap.xml',
   }
 }

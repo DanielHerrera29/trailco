@@ -10,8 +10,12 @@ export const metadata: Metadata = {
   title: 'Trailco | Transporte Especial de Carga Pesada y Extradimensionada en Colombia',
   description:
     'Trailco - Transporte especial de carga pesada y extradimensionada. Grúas, tractomulas, cama bajas, escoltas, técnico vial y permisos viales. Más de 10 años de experiencia en Colombia.',
+  metadataBase: new URL('https://trailco.app'),
   icons: {
     icon: '/images/logo-empresa.jpg',
+  },
+  openGraph: {
+    url: 'https://trailco.app',
   },
 }
 
