@@ -6,7 +6,7 @@ const clients = [
   "Ingecolmaq",
   "Instituto de Desarrollo Urbano (IDU)",
   "CAR Cundinamarca",
-  "Invias", 
+  "Invias",
   "Ecopetrol",
   "Concay",
 ]
